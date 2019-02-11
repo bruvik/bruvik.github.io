@@ -6,7 +6,7 @@
     <description>Recent content on bruviks blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Feb 2019 08:41:44 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://bruvik.me/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,11 @@
     <item>
       <title>New Blog</title>
       <link>https://bruvik.me/posts/first-post/</link>
-      <pubDate>Mon, 11 Feb 2019 08:41:44 +0100</pubDate>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://bruvik.me/posts/first-post/</guid>
-      <description>Rebuilding my blog, I have planned to publish more content soon.</description>
+      <description>My old blog wasn&amp;rsquo;t updated in a long while, and I have planned to move from Jekyll to Hugo for a long while, so I finally set up everything.. I&amp;rsquo;m actually not sure where the source for my old blog is, but if I find it, I might republish some stuff. And I have planned to publish more content soon.
+I&amp;rsquo;m currently using the purehugo theme, because I like the simplicity and the look.</description>
     </item>
     
   </channel>
