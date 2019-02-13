@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on bruviks blog</title>
+    <title>Tags on Bruvik&#39;s blog</title>
     <link>https://bruvik.me/tags/</link>
-    <description>Recent content in Tags on bruviks blog</description>
+    <description>Recent content in Tags on Bruvik&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <copyright>&amp;copy; Anders Bruvik 2019</copyright>
+    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://bruvik.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blog</title>
+      <link>https://bruvik.me/tags/blog/</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/tags/blog/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

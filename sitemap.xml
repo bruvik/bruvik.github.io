@@ -1,36 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet type="text/xsl" href="https://bruvik.me/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://bruvik.me/posts/first-post/</loc>
+    <loc>https://bruvik.me/about/</loc>
+    <lastmod>2019-02-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/posts/new-blog/</loc>
     <lastmod>2019-02-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://bruvik.me/posts/</loc>
+    <loc>https://bruvik.me/tags/blog/</loc>
     <lastmod>2019-02-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bruvik.me/series/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bruvik.me/series-desc/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bruvik.me/tags/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bruvik.me/</loc>
+    <lastmod>2019-02-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/posts/</loc>
     <lastmod>2019-02-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/tags/</loc>
+    <lastmod>2019-02-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   

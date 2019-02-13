@@ -1,24 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bruviks blog</title>
+    <title>Bruvik&#39;s blog</title>
     <link>https://bruvik.me/</link>
-    <description>Recent content on bruviks blog</description>
+    <description>Recent content on Bruvik&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <language>en</language>
+    <copyright>&amp;copy; Anders Bruvik 2019</copyright>
+    <lastBuildDate>Sun, 10 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://bruvik.me/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://bruvik.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>About me</title>
+      <link>https://bruvik.me/about/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/about/</guid>
+      
+        <description>I&amp;rsquo;m an infrastructure engineer at Safespring. I&amp;rsquo;m also a co-organiser of devopsdays Oslo and Stockholm. Sometimes I go to other conferences.
+This blog is created with Hugo. I&amp;rsquo;m using a modified Jane theme.</description>
+      
+    </item>
+    
+    <item>
       <title>New Blog</title>
-      <link>https://bruvik.me/posts/first-post/</link>
+      <link>https://bruvik.me/posts/new-blog/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://bruvik.me/posts/first-post/</guid>
-      <description>My old blog wasn&amp;rsquo;t updated in a long while, and I have planned to move from Jekyll to Hugo for a long while, so I finally set up everything.. I&amp;rsquo;m actually not sure where the source for my old blog is, but if I find it, I might republish some stuff. And I have planned to publish more content soon.
-I&amp;rsquo;m currently using the purehugo theme, because I like the simplicity and the look.</description>
+      <guid>https://bruvik.me/posts/new-blog/</guid>
+      
+        <description>&lt;p&gt;My old blog wasn&amp;rsquo;t updated in a long while, and I have planned to move from
+Jekyll to &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; for a long while, so I finally set up everything.. I&amp;rsquo;m actually
+not sure where the source for my old blog is, but if I find it, I might
+republish some stuff. And I have planned to publish more content soon.&lt;/p&gt;</description>
+      
     </item>
     
   </channel>
