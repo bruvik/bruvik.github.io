@@ -1,28 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Bruvik&#39;s blog</title>
-    <link>https://bruvik.me/posts/</link>
-    <description>Recent content in Posts on Bruvik&#39;s blog</description>
+    <title>Devops on Bruvik&#39;s blog</title>
+    <link>https://bruvik.me/tags/devops/</link>
+    <description>Recent content in Devops on Bruvik&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; Anders Bruvik 2019</copyright>
-    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://bruvik.me/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bruvik.me/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>New Blog</title>
-      <link>https://bruvik.me/posts/new-blog/</link>
-      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://bruvik.me/posts/new-blog/</guid>
-      <description>&lt;p&gt;My old blog wasn&amp;rsquo;t updated in a long while, and I have planned to move from
-Jekyll to &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; for a long while, so I finally set up everything.. I&amp;rsquo;m actually
-not sure where the source for my old blog is, but if I find it, I might
-republish some older stuff. And I have planned to publish more content soon.&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Devopsdays Oslo Books</title>

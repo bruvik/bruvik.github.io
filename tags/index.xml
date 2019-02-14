@@ -21,5 +21,32 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Books</title>
+      <link>https://bruvik.me/tags/books/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>https://bruvik.me/tags/devops/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devopsdays</title>
+      <link>https://bruvik.me/tags/devopsdays/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/tags/devopsdays/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
