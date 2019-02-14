@@ -55,5 +55,19 @@ I compiled a list of all the books mentioned. If you want to see the talks, you 
       
     </item>
     
+    <item>
+      <title>Machinelearning resources from Devopsdays Oslo 2017</title>
+      <link>https://bruvik.me/posts/machinelearning/</link>
+      <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/machinelearning/</guid>
+      
+        <description>&lt;p&gt;At Devopsdays Oslo 2017, there was a discussion about machine learning at one of
+the one of the openspace sessions. I made some notes from the session, and put
+it into a gist that I shared on twitter. This is essentially that gist, so not
+much editing here.&lt;/p&gt;</description>
+      
+    </item>
+    
   </channel>
 </rss>
