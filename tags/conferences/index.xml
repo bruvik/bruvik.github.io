@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conferences on Bruvik&#39;s blog</title>
+    <link>https://bruvik.me/tags/conferences/</link>
+    <description>Recent content in Conferences on Bruvik&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; Anders Bruvik 2019</copyright>
+    <lastBuildDate>Tue, 12 Feb 2019 10:25:31 +0100</lastBuildDate>
+    
+	<atom:link href="https://bruvik.me/tags/conferences/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Devopsdays Copenhagen 2019</title>
+      <link>https://bruvik.me/posts/devopsdays-copenhagen-2019/</link>
+      <pubDate>Tue, 12 Feb 2019 10:25:31 +0100</pubDate>
+      
+      <guid>https://bruvik.me/posts/devopsdays-copenhagen-2019/</guid>
+      <description>&lt;h1 id=&#34;summary-from-devopsdays-copenhagen&#34;&gt;Summary from devopsdays Copenhagen&lt;/h1&gt;
+
+&lt;p&gt;Last week I visited Devopsdays Copenhagen for the second time (which also happened to be the second time the conference was arranged).&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
