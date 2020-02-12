@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blog on Bruvik&#39;s blog</title>
@@ -18,8 +18,8 @@
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://bruvik.me/posts/new-blog/</guid>
-      <description>&lt;p&gt;My old blog wasn&amp;rsquo;t updated in a long while, and I have planned to move from
-Jekyll to &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; for a long while, so I finally set up everything.. I&amp;rsquo;m actually
+      <description>&lt;p&gt;My old blog wasn&#39;t updated in a long while, and I have planned to move from
+Jekyll to &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; for a long while, so I finally set up everything.. I&#39;m actually
 not sure where the source for my old blog is, but if I find it, I might
 republish some older stuff. And I have planned to publish more content soon.&lt;/p&gt;</description>
     </item>

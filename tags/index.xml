@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Bruvik&#39;s blog</title>
@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; Anders Bruvik 2019</copyright>
-    <lastBuildDate>Tue, 12 Feb 2019 10:25:31 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://bruvik.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gpg</title>
+      <link>https://bruvik.me/tags/gpg/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/tags/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tools</title>
+      <link>https://bruvik.me/tags/tools/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/tags/tools/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>conferences</title>

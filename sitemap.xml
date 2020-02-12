@@ -1,5 +1,6 @@
-<?xml-stylesheet type="text/xsl" href="https://bruvik.me/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://bruvik.me/about/</loc>
@@ -10,8 +11,58 @@
   
   <url>
     <loc>https://bruvik.me/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/tags/gpg/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/posts/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/posts/useful-gpg-commands/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/tags/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/tags/tools/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/tags/conferences/</loc>
     <lastmod>2019-02-12T10:25:31+01:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/tags/devopsdays/</loc>
+    <lastmod>2019-02-12T10:25:31+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -22,27 +73,10 @@
   </url>
   
   <url>
-    <loc>https://bruvik.me/posts/</loc>
-    <lastmod>2019-02-12T10:25:31+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bruvik.me/tags/</loc>
-    <lastmod>2019-02-12T10:25:31+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bruvik.me/tags/conferences/</loc>
-    <lastmod>2019-02-12T10:25:31+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bruvik.me/tags/devopsdays/</loc>
-    <lastmod>2019-02-12T10:25:31+01:00</lastmod>
-    <priority>0</priority>
+    <loc>https://bruvik.me/tags/blog/</loc>
+    <lastmod>2019-02-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -53,9 +87,17 @@
   </url>
   
   <url>
-    <loc>https://bruvik.me/tags/blog/</loc>
-    <lastmod>2019-02-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://bruvik.me/tags/books/</loc>
+    <lastmod>2017-11-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/tags/devops/</loc>
+    <lastmod>2017-11-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -66,15 +108,24 @@
   </url>
   
   <url>
-    <loc>https://bruvik.me/tags/books/</loc>
-    <lastmod>2017-11-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://bruvik.me/tags/deopsdays/</loc>
+    <lastmod>2017-02-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://bruvik.me/tags/devops/</loc>
-    <lastmod>2017-11-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://bruvik.me/tags/jupyter/</loc>
+    <lastmod>2017-02-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bruvik.me/tags/machinelearning/</loc>
+    <lastmod>2017-02-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -85,32 +136,16 @@
   </url>
   
   <url>
-    <loc>https://bruvik.me/tags/deopsdays/</loc>
-    <lastmod>2017-02-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bruvik.me/tags/jupyter/</loc>
-    <lastmod>2017-02-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bruvik.me/tags/machinelearning/</loc>
-    <lastmod>2017-02-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bruvik.me/tags/python/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://bruvik.me/categories/</loc>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>
