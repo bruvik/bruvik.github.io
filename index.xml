@@ -23,6 +23,15 @@ I live in Norway.</description>
     </item>
     
     <item>
+      <title>CS3 conference 2020</title>
+      <link>https://bruvik.me/posts/cs3-conference-2020/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/cs3-conference-2020/</guid>
+      <description>CS3 conference 2020 I recently attended the CS3 conference in Copenhagen. I did a talk about our experiences from running ceph in production for almost 3 years, and here is a link to the slides from my talk</description>
+    </item>
+    
+    <item>
       <title>Some useful GPG commands</title>
       <link>https://bruvik.me/posts/useful-gpg-commands/</link>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>

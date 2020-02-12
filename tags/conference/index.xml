@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>conference on Bruvik&#39;s blog</title>
+    <link>https://bruvik.me/tags/conference/</link>
+    <description>Recent content in conference on Bruvik&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Anders Bruvik</copyright>
+    <lastBuildDate>Wed, 12 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://bruvik.me/tags/conference/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CS3 conference 2020</title>
+      <link>https://bruvik.me/posts/cs3-conference-2020/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/cs3-conference-2020/</guid>
+      <description>CS3 conference 2020 I recently attended the CS3 conference in Copenhagen. I did a talk about our experiences from running ceph in production for almost 3 years, and here is a link to the slides from my talk</description>
+    </item>
+    
+  </channel>
+</rss>
