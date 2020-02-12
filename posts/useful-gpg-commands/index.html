@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Categories - Bruvik&#39;s blog</title>
+  <title>Some useful GPG commands - Bruvik&#39;s blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Anders Bruvik" />
-  <meta name="description" content="Bruvik&#39;s blog" />
+  <meta name="description" content="Some useful gpg commands I recently ran into a problem with some gpg encrypted file, where the files were encrypted with another key than they were supposed to. Therefore I had to reencrypt them with another key. Every time I run into an unusual task with OpenGPG I find myself banging my head into a wall of useless documentation. Here’s some of the useful commands I found which let me resolve the issue:" />
+
   <meta name="keywords" content="Blog, Devops, infrastructure" />
 
 
@@ -34,8 +35,7 @@
 <meta name="generator" content="Hugo 0.62.2" />
 
 
-<link rel="canonical" href="https://bruvik.me/categories/" />
-<link href="https://bruvik.me/categories/index.xml" rel="alternate" type="application/rss+xml" title="Bruvik&#39;s blog" />
+<link rel="canonical" href="https://bruvik.me/posts/useful-gpg-commands/" />
 
 
 
@@ -57,15 +57,23 @@
 
 
 
-<meta property="og:title" content="Categories" />
-<meta property="og:description" content="Bruvik&#39;s blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://bruvik.me/categories/" />
+<meta property="og:title" content="Some useful GPG commands" />
+<meta property="og:description" content="Some useful gpg commands I recently ran into a problem with some gpg encrypted file, where the files were encrypted with another key than they were supposed to. Therefore I had to reencrypt them with another key. Every time I run into an unusual task with OpenGPG I find myself banging my head into a wall of useless documentation. Here’s some of the useful commands I found which let me resolve the issue:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bruvik.me/posts/useful-gpg-commands/" />
+<meta property="article:published_time" content="2020-02-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-12T00:00:00+00:00" />
+<meta itemprop="name" content="Some useful GPG commands">
+<meta itemprop="description" content="Some useful gpg commands I recently ran into a problem with some gpg encrypted file, where the files were encrypted with another key than they were supposed to. Therefore I had to reencrypt them with another key. Every time I run into an unusual task with OpenGPG I find myself banging my head into a wall of useless documentation. Here’s some of the useful commands I found which let me resolve the issue:">
+<meta itemprop="datePublished" content="2020-02-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="305">
 
-<meta itemprop="name" content="Categories">
-<meta itemprop="description" content="Bruvik&#39;s blog"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Categories"/>
-<meta name="twitter:description" content="Bruvik&#39;s blog"/>
+
+
+<meta itemprop="keywords" content="gpg,tools," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Some useful GPG commands"/>
+<meta name="twitter:description" content="Some useful gpg commands I recently ran into a problem with some gpg encrypted file, where the files were encrypted with another key than they were supposed to. Therefore I had to reencrypt them with another key. Every time I run into an unusual task with OpenGPG I find myself banging my head into a wall of useless documentation. Here’s some of the useful commands I found which let me resolve the issue:"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -191,14 +199,66 @@ if (!doNotTrack) {
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
+          <article class="post bg-white">
+  
+  <header class="post-header">
+    <h1 class="post-title">Some useful GPG commands</h1>
+    
+    <div class="post-meta">
+      <time datetime="2020-02-12" class="post-time">
+        2. feb 2020
+      </time>
+    </div>
+  </header>
+
   
   
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+
+  
+  <div class="post-content">
+      <h1 id="some-useful-gpg-commands">Some useful gpg commands</h1>
+<p>I recently ran into a problem with some gpg encrypted file, where the files were encrypted with another key than they were supposed to. Therefore I had to reencrypt them with another key.
+Every time I run into an unusual task with OpenGPG I find myself banging my head into a wall of useless documentation. Here’s some of the useful commands I found which let me resolve the issue:</p>
+<p>First I had to find out what keys the file was actually encrypted with.</p>
+<p><code>gpg --list-packets file.gpg</code> - lists contents of a gpg  encrypted package - including the key IDs used for encrypting the file. (The man page is of course less useful, since it only says “List  only  the  sequence  of  packets.   This command is only useful for debugging.” - but I haven’t found another way to do what I want)</p>
+<p><code>% gpg --pinentry-mode cancel --list-packets &lt;file&gt;.gpg 2&gt;&amp;1</code> - if you only want to see which keys a file is encrypted with. (note, it will list the keys to STDERR, so therefor I added the redirect to STDOUT so I could grep for the key I was looking for)</p>
+<p><code>% gpg -k --keyid-format short</code> and <code>% gpg -k --keyid-format long</code> - There is a long and short format for GPG keys. If you want to see the short or long format for the keyid when listing keys, add the <code>—-keyid-format</code> option.</p>
+<p>Note: if you always want to print for instance long format, you could add <code>keyid-format long</code> to <code>~/.gnupg/gpg.conf</code></p>
+<p>Want to know the fingerprint of the subkeys? Use <code>gpg -K --with-subkey-fingerprint --keyid-format none</code></p>
+<p>Useful links:</p>
+<p><a href="https://superuser.com/questions/1409511/how-to-check-if-a-gpg-encrypted-file-is-encrypted-using-a-specific-public-key">security - How to check if a GPG encrypted file is encrypted using a specific public key? - Super User</a>
+<a href="https://askubuntu.com/questions/929307/how-to-change-the-gpg-key-of-the-pass-password-store">pgp - How to change the gpg key of the pass password store - Ask Ubuntu</a></p>
+
+  </div>
+
+  
+  
+
+
+  
+  
+</article>
+
+
+
+
   
   
 
   
+
   
+
+  
+  
+    
+
 
 
         </div>
