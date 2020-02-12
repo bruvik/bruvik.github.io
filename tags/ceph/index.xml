@@ -21,5 +21,15 @@
       <description>CS3 conference 2020 I recently attended the CS3 conference in Copenhagen. I did a talk about our experiences from running ceph in production for almost 3 years, and here is a link to the slides from my talk</description>
     </item>
     
+    <item>
+      <title>CS3 conference 2019</title>
+      <link>https://bruvik.me/posts/cs3-conference-2019/</link>
+      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/cs3-conference-2019/</guid>
+      <description>Summing up the CS3 conference 2019 This year started with a visit to Rome and the 5th edition of the CS3 (cloud services for synchronisation and sharing) - a yearly European conference that started as a workshop between Universities, National Research and Education networks and Research Centres in an attempt to exchange experiences in extending traditional storage technologies to the cloud.
+This was my second visit to the conference, last time was two years ago, and I worked for the University of Oslo and visited primarily because of my interest in sync and sharing solutions.</description>
+    </item>
+    
   </channel>
 </rss>
