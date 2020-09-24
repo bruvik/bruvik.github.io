@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Anders Bruvik</copyright>
-    <lastBuildDate>Wed, 12 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://bruvik.me/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Running pihole in a docker-container</title>
+      <link>https://bruvik.me/posts/pihole-in-a-docker-container-ipv6/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/pihole-in-a-docker-container-ipv6/</guid>
+      <description>Getting ipv6 to work with rpi, docker and pihole This is how I made pihole run in a docker container with ipv6 support.
+Step one: Configure docker for ipv›6:
+1 2 3 4 5  $ cat /etc/docker/daemon.json { &amp;#34;ipv6&amp;#34;: true, &amp;#34;fixed-cidr-v6&amp;#34;: &amp;lt;your-ipvc-cidr&amp;gt; }   then we need to create a ipv6 network for docker:
+1  docker network create --ipv6 --driver bridge --subnet &amp;#34;fd01::/64&amp;#34; ipv6   restart docker</description>
+    </item>
     
     <item>
       <title>CS3 conference 2020</title>
@@ -56,8 +68,8 @@ This was my second visit to the conference, last time was two years ago, and I w
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://bruvik.me/posts/new-blog/</guid>
-      <description>&lt;p&gt;My old blog wasn&#39;t updated in a long while, and I have planned to move from
-Jekyll to &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; for a long while, so I finally set up everything.. I&#39;m actually
+      <description>&lt;p&gt;My old blog wasn&amp;rsquo;t updated in a long while, and I have planned to move from
+Jekyll to &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; for a long while, so I finally set up everything.. I&amp;rsquo;m actually
 not sure where the source for my old blog is, but if I find it, I might
 republish some older stuff. And I have planned to publish more content soon.&lt;/p&gt;</description>
     </item>
