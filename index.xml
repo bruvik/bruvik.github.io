@@ -1,38 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Bruvik&#39;s blog </title>
-		<link>https://bruvik.me/</link>
-		<generator>Hugo -- gohugo.io</generator>
-		<language>en-us</language>
-		<author></author>
-		<rights>Copyright (c) 2020</rights>
-		<updated>2020-09-24 00:00:00 &#43;0000 UTC</updated>
-		
-		<item>
-			<title>About me</title>
-			<link>https://bruvik.me/about/</link>
-			<pubDate>Sun, 10 Feb 2019 00:00:00 UTC</pubDate>
-			<author></author>
-			<guid>https://bruvik.me/about/</guid>
-			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://bruvik.me/img/default-header-img.tn-500x500.jpg" medium="image" type="image/jpg" width="100" height="100" />
-			<description>&lt;p&gt;My day job is Technical Team Lead at &lt;a href=&#34;https://safespring.com&#34;&gt;Safespring&lt;/a&gt;. I&amp;rsquo;m also
-a co-organiser of &lt;a href=&#34;https://www.devopsdays.org/events/2019-oslo/welcome/&#34;&gt;Devopsdays
-Oslo&lt;/a&gt; and &lt;a href=&#34;https://www.devopsdays.org/events/2019-stockholm/welcome/&#34;&gt;Devopsdays
-Stockholm&lt;/a&gt;. Sometimes
-I go to other conferences.&lt;/p&gt;
-&lt;p&gt;I live in Norway.&lt;/p&gt;
-</description>
-		</item>
-		
-		<item>
-			<title>Posts</title>
-			<link>https://bruvik.me/posts/</link>
-			<pubDate>Thu, 24 Sep 2020 00:00:00 UTC</pubDate>
-			<author></author>
-			<guid>https://bruvik.me/posts/</guid>
-			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://bruvik.me/img/default-header-img.tn-500x500.jpg" medium="image" type="image/jpg" width="100" height="100" />
-			<description></description>
-		</item>
-		
-	</channel>
+  <channel>
+    <title>Bruvik&#39;s blog</title>
+    <link>https://bruvik.me/</link>
+    <description>Recent content on Bruvik&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Anders Bruvik</copyright>
+    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://bruvik.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About me</title>
+      <link>https://bruvik.me/about/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/about/</guid>
+      <description>My day job is Technical Team Lead at Safespring. I&amp;rsquo;m also a co-organiser of Devopsdays Oslo and Devopsdays Stockholm. Sometimes I go to other conferences.
+I live in Norway.</description>
+    </item>
+    
+    <item>
+      <title>Running pihole in a docker-container</title>
+      <link>https://bruvik.me/posts/pihole-in-a-docker-container-ipv6/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/pihole-in-a-docker-container-ipv6/</guid>
+      <description>Getting ipv6 to work with rpi, docker and pihole This is how I made pihole run in a docker container with ipv6 support.
+Step one: Configure docker for ipv›6:
+1 2 3 4 5  $ cat /etc/docker/daemon.json { &amp;#34;ipv6&amp;#34;: true, &amp;#34;fixed-cidr-v6&amp;#34;: &amp;lt;your-ipvc-cidr&amp;gt; }   then we need to create a ipv6 network for docker:
+1  docker network create --ipv6 --driver bridge --subnet &amp;#34;fd01::/64&amp;#34; ipv6   restart docker</description>
+    </item>
+    
+    <item>
+      <title>CS3 conference 2020</title>
+      <link>https://bruvik.me/posts/cs3-conference-2020/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/cs3-conference-2020/</guid>
+      <description>CS3 conference 2020 I recently attended the CS3 conference in Copenhagen. I did a talk about our experiences from running ceph in production for almost 3 years, and here is a link to the slides from my talk</description>
+    </item>
+    
+    <item>
+      <title>Some useful GPG commands</title>
+      <link>https://bruvik.me/posts/useful-gpg-commands/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/useful-gpg-commands/</guid>
+      <description>Some useful gpg commands I recently ran into a problem with some gpg encrypted file, where the files were encrypted with another key than they were supposed to. Therefore I had to reencrypt them with another key. Every time I run into an unusual task with OpenGPG I find myself banging my head into a wall of useless documentation. Here’s some of the useful commands I found which let me resolve the issue:</description>
+    </item>
+    
+    <item>
+      <title>CS3 conference 2019</title>
+      <link>https://bruvik.me/posts/cs3-conference-2019/</link>
+      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/cs3-conference-2019/</guid>
+      <description>Summing up the CS3 conference 2019 This year started with a visit to Rome and the 5th edition of the CS3 (cloud services for synchronisation and sharing) - a yearly European conference that started as a workshop between Universities, National Research and Education networks and Research Centres in an attempt to exchange experiences in extending traditional storage technologies to the cloud.
+This was my second visit to the conference, last time was two years ago, and I worked for the University of Oslo and visited primarily because of my interest in sync and sharing solutions.</description>
+    </item>
+    
+    <item>
+      <title>Devopsdays Copenhagen 2019</title>
+      <link>https://bruvik.me/posts/devopsdays-copenhagen-2019/</link>
+      <pubDate>Tue, 12 Feb 2019 10:25:31 +0100</pubDate>
+      
+      <guid>https://bruvik.me/posts/devopsdays-copenhagen-2019/</guid>
+      <description>&lt;h1 id=&#34;summary-from-devopsdays-copenhagen&#34;&gt;Summary from devopsdays Copenhagen&lt;/h1&gt;
+&lt;p&gt;Last week I visited Devopsdays Copenhagen for the second time (which also happened to be the second time the conference was arranged).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>New Blog</title>
+      <link>https://bruvik.me/posts/new-blog/</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/new-blog/</guid>
+      <description>&lt;p&gt;My old blog wasn&amp;rsquo;t updated in a long while, and I have planned to move from
+Jekyll to &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; for a long while, so I finally set up everything.. I&amp;rsquo;m actually
+not sure where the source for my old blog is, but if I find it, I might
+republish some older stuff. And I have planned to publish more content soon.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Devopsdays Oslo Books</title>
+      <link>https://bruvik.me/posts/devopsdays-oslo-books/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/devopsdays-oslo-books/</guid>
+      <description>&lt;h1 id=&#34;books-mentioned-at-devopsdays-oslo-2017&#34;&gt;Books mentioned at devopsdays Oslo 2017&lt;/h1&gt;
+&lt;p&gt;There was a lot of books mentioned during the talks at Devopsdays Oslo 2017.
+I compiled a list of all the books mentioned. If you want to see the talks, you can find links to the recordings on the
+&lt;a href=&#34;https://www.devopsdays.org/events/2017-oslo/welcome/&#34;&gt;Devopsdays website&lt;/a&gt; (the books
+are listed by the speaker)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Machinelearning resources from Devopsdays Oslo 2017</title>
+      <link>https://bruvik.me/posts/machinelearning/</link>
+      <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/machinelearning/</guid>
+      <description>&lt;p&gt;At Devopsdays Oslo 2017, there was a discussion about machine learning at one of
+the one of the openspace sessions. I made some notes from the session, and put
+it into a gist that I shared on twitter. This is essentially that gist, so not
+much editing here.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
 </rss>
