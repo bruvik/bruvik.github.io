@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>docker &middot; Bruvik&#39;s blog</title>
+    <title>dotfiles &middot; Bruvik&#39;s blog</title>
 
     <meta name="description" content="Bruvik&#39;s blog">
 
     <meta name="generator" content="Hugo 0.103.0" />
     <meta name="twitter:card" content="summary">
     
-    <meta name="twitter:title" content="docker &middot; Bruvik&#39;s blog">
+    <meta name="twitter:title" content="dotfiles &middot; Bruvik&#39;s blog">
     <meta name="twitter:description" content="Bruvik&#39;s blog">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="docker &middot; Bruvik&#39;s blog">
+    <meta property="og:title" content="dotfiles &middot; Bruvik&#39;s blog">
     <meta property="og:description" content="Bruvik&#39;s blog">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
@@ -59,11 +59,11 @@
             
             <div class="posts">
                 
-                <h1 class="content-subhead">24 Sep 2020, 00:00</h1>
+                <h1 class="content-subhead">23 Sep 2022, 00:00</h1>
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="https://bruvik.me/posts/pihole-in-a-docker-container-ipv6/" class="post-title">Running pihole in a docker-container</a>
+                        <a href="https://bruvik.me/posts/managing-dotfiles/" class="post-title">Managing dotifles in git</a>
 
                         <p class="post-meta">
                             
@@ -72,80 +72,96 @@
                     </header>
 
                     <div class="post-description">
-                        <h1 id="getting-ipv6-to-work-with-rpi-docker-and-pihole">Getting ipv6 to work with rpi, docker and pihole</h1>
-<p>This is how I made pihole run in a docker container with ipv6 support.</p>
-<p>Step one: Configure docker for ipv›6:</p>
+                        <p>How to manage dotfiles in a bare git-repo</p>
+<p>How to set up:</p>
+<p>Initialize an empty git repo in a folder in <code>$HOME</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git init --bare <span class="nv">$HOME</span>/.cfg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now we want to set up an alias for git to work on this repo:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">config</span><span class="o">=</span><span class="s1">&#39;/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME&#39;</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We want to hide untraced files, so we explicitly choose which files to track:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">config config --local status.showUntrackedFiles no
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Make config persistent, I use zsh, so I add the alias to .zshrc</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;alias config=&#39;/usr/bin/git --git-dir=</span><span class="nv">$HOME</span><span class="s2">/.cfg/ --work-tree=</span><span class="nv">$HOME</span><span class="s2">&#39;&#34;</span> &gt;&gt; <span class="nv">$HOME</span>/.zshrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>now its time to add a few existing config files to the repo:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ cat /etc/docker/daemon.json
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">        &#34;ipv6&#34;: true,
-</span></span><span class="line"><span class="cl">        &#34;fixed-cidr-v6&#34;: &lt;your-ipvc-cidr&gt;
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">config add .zshrc
+</span></span><span class="line"><span class="cl">config add .vimrc
+</span></span><span class="line"><span class="cl">config commit
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>then we need to create a ipv6 network for docker:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker network create --ipv6 --driver bridge --subnet &#34;fd01::/64&#34; ipv6
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>restart docker</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl restart docker
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>I use docker-compose to manage the container, so I added the following to  docker-compose.yml</p>
+</div><p>I created a github repo and pushed my config to github:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      ServerIPv6: &lt;this is the ip of your rpi host&gt;
-</span></span><span class="line"><span class="cl">      IPv6: &#34;true&#34;
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">config remote add origin &lt;github-repo-url&gt;
+</span></span><span class="line"><span class="cl">config push
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>and choose the ipv6 network:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">networks:
-</span></span><span class="line"><span class="cl">  default:
-</span></span><span class="line"><span class="cl">    external:
-</span></span><span class="line"><span class="cl">      name: ipv6
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>rebuild the docker container:</p>
+</div><p>Now, time to check out my config on another machine. First, checkout the repo using the <code>--bare</code> option</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ docker-compose up -d --no-deps --build pihole
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone --bare &lt;git-repo-url&gt; <span class="nv">$HOME</span>/.cfg
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>And voila! The pihole instance should now come up with an valid ipv6 address - and should respond to DNS queries on the ipv6 interface.</p>
-
+</div><p>Define the config-alias</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">config</span><span class="o">=</span><span class="s1">&#39;/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>And last: Check out the repo</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">config checkout
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
                     </div>
                 </section>
                 

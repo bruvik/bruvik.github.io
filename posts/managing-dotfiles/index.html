@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tools &middot; Bruvik&#39;s blog</title>
+    <title>Managing dotifles in git &middot; Bruvik&#39;s blog</title>
 
-    <meta name="description" content="Bruvik&#39;s blog">
+    <meta name="description" content="">
 
     <meta name="generator" content="Hugo 0.103.0" />
     <meta name="twitter:card" content="summary">
     
-    <meta name="twitter:title" content="tools &middot; Bruvik&#39;s blog">
-    <meta name="twitter:description" content="Bruvik&#39;s blog">
+    <meta name="twitter:title" content="Managing dotifles in git &middot; Bruvik&#39;s blog">
+    <meta name="twitter:description" content="">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="tools &middot; Bruvik&#39;s blog">
-    <meta property="og:description" content="Bruvik&#39;s blog">
+    <meta property="og:title" content="Managing dotifles in git &middot; Bruvik&#39;s blog">
+    <meta property="og:description" content="">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
@@ -58,7 +58,6 @@
         <div>
             
             <div class="posts">
-                
                 <h1 class="content-subhead">23 Sep 2022, 00:00</h1>
                 <section class="post">
                     <header class="post-header">
@@ -70,7 +69,17 @@
                             
                         </p>
                     </header>
-
+                    
+                    <div class="post-share">
+                        <div class="post-share-links">
+                            <h4 style="">Share</h4>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                    
                     <div class="post-description">
                         <p>How to manage dotfiles in a bare git-repo</p>
 <p>How to set up:</p>
@@ -163,42 +172,9 @@
 </div>
 </div>
                     </div>
+                    
                 </section>
-                
-                <h1 class="content-subhead">12 Feb 2020, 00:00</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="https://bruvik.me/posts/useful-gpg-commands/" class="post-title">Some useful GPG commands</a>
-
-                        <p class="post-meta">
-                            
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        <h1 id="some-useful-gpg-commands">Some useful gpg commands</h1>
-<p>I recently ran into a problem with some gpg encrypted file, where the files were encrypted with another key than they were supposed to. Therefore I had to reencrypt them with another key.
-Every time I run into an unusual task with OpenGPG I find myself banging my head into a wall of useless documentation. Here’s some of the useful commands I found which let me resolve the issue:</p>
-<p>First I had to find out what keys the file was actually encrypted with.</p>
-<p><code>gpg --list-packets file.gpg</code> - lists contents of a gpg  encrypted package - including the key IDs used for encrypting the file. (The man page is of course less useful, since it only says “List  only  the  sequence  of  packets.   This command is only useful for debugging.” - but I haven’t found another way to do what I want)</p>
-<p><code>% gpg --pinentry-mode cancel --list-packets &lt;file&gt;.gpg 2&gt;&amp;1</code> - if you only want to see which keys a file is encrypted with. (note, it will list the keys to STDERR, so therefor I added the redirect to STDOUT so I could grep for the key I was looking for)</p>
-<p><code>% gpg -k --keyid-format short</code> and <code>% gpg -k --keyid-format long</code> - There is a long and short format for GPG keys. If you want to see the short or long format for the keyid when listing keys, add the <code>—-keyid-format</code> option.</p>
-<p>Note: if you always want to print for instance long format, you could add <code>keyid-format long</code> to <code>~/.gnupg/gpg.conf</code></p>
-<p>Want to know the fingerprint of the subkeys? Use <code>gpg -K --with-subkey-fingerprint --keyid-format none</code></p>
-<p>A few useful links:</p>
-<ul>
-<li><a href="https://superuser.com/questions/1409511/how-to-check-if-a-gpg-encrypted-file-is-encrypted-using-a-specific-public-key">security - How to check if a GPG encrypted file is encrypted using a specific public key? - Super User</a></li>
-<li><a href="https://askubuntu.com/questions/929307/how-to-change-the-gpg-key-of-the-pass-password-store">pgp - How to change the gpg key of the pass password store - Ask Ubuntu</a></li>
-</ul>
-
-                    </div>
-                </section>
-                
             </div>
-            
-
             <div class="footer">
     <div class="pure-menu pure-menu-horizontal pure-menu-open">
         <ul>
@@ -211,6 +187,7 @@ Every time I run into an unusual task with OpenGPG I find myself banging my head
         </div>
     </div>
 </div>
+
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

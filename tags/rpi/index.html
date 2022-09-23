@@ -7,7 +7,7 @@
 
     <meta name="description" content="Bruvik&#39;s blog">
 
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.103.0" />
     <meta name="twitter:card" content="summary">
     
     <meta name="twitter:title" content="rpi &middot; Bruvik&#39;s blog">
@@ -77,72 +77,72 @@
 <p>Step one: Configure docker for ipv›6:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cat /etc/docker/daemon.json
-{
-        &#34;ipv6&#34;: true,
-        &#34;fixed-cidr-v6&#34;: &lt;your-ipvc-cidr&gt;
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ cat /etc/docker/daemon.json
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">        &#34;ipv6&#34;: true,
+</span></span><span class="line"><span class="cl">        &#34;fixed-cidr-v6&#34;: &lt;your-ipvc-cidr&gt;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>then we need to create a ipv6 network for docker:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker network create --ipv6 --driver bridge --subnet &#34;fd01::/64&#34; ipv6
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker network create --ipv6 --driver bridge --subnet &#34;fd01::/64&#34; ipv6
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>restart docker</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl restart docker
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl restart docker
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>I use docker-compose to manage the container, so I added the following to  docker-compose.yml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">      ServerIPv6: &lt;this is the ip of your rpi host&gt;
-      IPv6: &#34;true&#34;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      ServerIPv6: &lt;this is the ip of your rpi host&gt;
+</span></span><span class="line"><span class="cl">      IPv6: &#34;true&#34;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>and choose the ipv6 network:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">networks:
-  default:
-    external:
-      name: ipv6
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">networks:
+</span></span><span class="line"><span class="cl">  default:
+</span></span><span class="line"><span class="cl">    external:
+</span></span><span class="line"><span class="cl">      name: ipv6
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>rebuild the docker container:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ docker-compose up -d --no-deps --build pihole
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ docker-compose up -d --no-deps --build pihole
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>And voila! The pihole instance should now come up with an valid ipv6 address - and should respond to DNS queries on the ipv6 interface.</p>
 

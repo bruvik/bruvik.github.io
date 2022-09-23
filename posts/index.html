@@ -7,7 +7,7 @@
 
     <meta name="description" content="Bruvik&#39;s blog">
 
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.103.0" />
     <meta name="twitter:card" content="summary">
     
     <meta name="twitter:title" content="Posts &middot; Bruvik&#39;s blog">
@@ -59,6 +59,112 @@
             
             <div class="posts">
                 
+                <h1 class="content-subhead">23 Sep 2022, 00:00</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://bruvik.me/posts/managing-dotfiles/" class="post-title">Managing dotifles in git</a>
+
+                        <p class="post-meta">
+                            
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>How to manage dotfiles in a bare git-repo</p>
+<p>How to set up:</p>
+<p>Initialize an empty git repo in a folder in <code>$HOME</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git init --bare <span class="nv">$HOME</span>/.cfg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now we want to set up an alias for git to work on this repo:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">config</span><span class="o">=</span><span class="s1">&#39;/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME&#39;</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We want to hide untraced files, so we explicitly choose which files to track:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">config config --local status.showUntrackedFiles no
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Make config persistent, I use zsh, so I add the alias to .zshrc</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;alias config=&#39;/usr/bin/git --git-dir=</span><span class="nv">$HOME</span><span class="s2">/.cfg/ --work-tree=</span><span class="nv">$HOME</span><span class="s2">&#39;&#34;</span> &gt;&gt; <span class="nv">$HOME</span>/.zshrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>now its time to add a few existing config files to the repo:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">config add .zshrc
+</span></span><span class="line"><span class="cl">config add .vimrc
+</span></span><span class="line"><span class="cl">config commit
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>I created a github repo and pushed my config to github:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">config remote add origin &lt;github-repo-url&gt;
+</span></span><span class="line"><span class="cl">config push
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, time to check out my config on another machine. First, checkout the repo using the <code>--bare</code> option</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone --bare &lt;git-repo-url&gt; <span class="nv">$HOME</span>/.cfg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Define the config-alias</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">config</span><span class="o">=</span><span class="s1">&#39;/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>And last: Check out the repo</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">config checkout
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+                    </div>
+                </section>
+                
                 <h1 class="content-subhead">24 Sep 2020, 00:00</h1>
                 <section class="post">
                     <header class="post-header">
@@ -77,72 +183,72 @@
 <p>Step one: Configure docker for ipv›6:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cat /etc/docker/daemon.json
-{
-        &#34;ipv6&#34;: true,
-        &#34;fixed-cidr-v6&#34;: &lt;your-ipvc-cidr&gt;
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ cat /etc/docker/daemon.json
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">        &#34;ipv6&#34;: true,
+</span></span><span class="line"><span class="cl">        &#34;fixed-cidr-v6&#34;: &lt;your-ipvc-cidr&gt;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>then we need to create a ipv6 network for docker:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker network create --ipv6 --driver bridge --subnet &#34;fd01::/64&#34; ipv6
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker network create --ipv6 --driver bridge --subnet &#34;fd01::/64&#34; ipv6
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>restart docker</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl restart docker
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl restart docker
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>I use docker-compose to manage the container, so I added the following to  docker-compose.yml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">      ServerIPv6: &lt;this is the ip of your rpi host&gt;
-      IPv6: &#34;true&#34;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      ServerIPv6: &lt;this is the ip of your rpi host&gt;
+</span></span><span class="line"><span class="cl">      IPv6: &#34;true&#34;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>and choose the ipv6 network:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">networks:
-  default:
-    external:
-      name: ipv6
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">networks:
+</span></span><span class="line"><span class="cl">  default:
+</span></span><span class="line"><span class="cl">    external:
+</span></span><span class="line"><span class="cl">      name: ipv6
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>rebuild the docker container:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ docker-compose up -d --no-deps --build pihole
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ docker-compose up -d --no-deps --build pihole
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>And voila! The pihole instance should now come up with an valid ipv6 address - and should respond to DNS queries on the ipv6 interface.</p>
 
@@ -166,37 +272,6 @@
 <p>I recently attended the <a href="https://cs3.deic.dk/">CS3 conference</a> in Copenhagen. I
 did a talk about our experiences from running ceph in production for almost 3
 years, and here is a link to the <a href="https://www.slideshare.net/abruvik/ceph-in-therealworld">slides from my talk</a></p>
-
-                    </div>
-                </section>
-                
-                <h1 class="content-subhead">12 Feb 2020, 00:00</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="https://bruvik.me/posts/useful-gpg-commands/" class="post-title">Some useful GPG commands</a>
-
-                        <p class="post-meta">
-                            
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        <h1 id="some-useful-gpg-commands">Some useful gpg commands</h1>
-<p>I recently ran into a problem with some gpg encrypted file, where the files were encrypted with another key than they were supposed to. Therefore I had to reencrypt them with another key.
-Every time I run into an unusual task with OpenGPG I find myself banging my head into a wall of useless documentation. Here’s some of the useful commands I found which let me resolve the issue:</p>
-<p>First I had to find out what keys the file was actually encrypted with.</p>
-<p><code>gpg --list-packets file.gpg</code> - lists contents of a gpg  encrypted package - including the key IDs used for encrypting the file. (The man page is of course less useful, since it only says “List  only  the  sequence  of  packets.   This command is only useful for debugging.” - but I haven’t found another way to do what I want)</p>
-<p><code>% gpg --pinentry-mode cancel --list-packets &lt;file&gt;.gpg 2&gt;&amp;1</code> - if you only want to see which keys a file is encrypted with. (note, it will list the keys to STDERR, so therefor I added the redirect to STDOUT so I could grep for the key I was looking for)</p>
-<p><code>% gpg -k --keyid-format short</code> and <code>% gpg -k --keyid-format long</code> - There is a long and short format for GPG keys. If you want to see the short or long format for the keyid when listing keys, add the <code>—-keyid-format</code> option.</p>
-<p>Note: if you always want to print for instance long format, you could add <code>keyid-format long</code> to <code>~/.gnupg/gpg.conf</code></p>
-<p>Want to know the fingerprint of the subkeys? Use <code>gpg -K --with-subkey-fingerprint --keyid-format none</code></p>
-<p>A few useful links:</p>
-<ul>
-<li><a href="https://superuser.com/questions/1409511/how-to-check-if-a-gpg-encrypted-file-is-encrypted-using-a-specific-public-key">security - How to check if a GPG encrypted file is encrypted using a specific public key? - Super User</a></li>
-<li><a href="https://askubuntu.com/questions/929307/how-to-change-the-gpg-key-of-the-pass-password-store">pgp - How to change the gpg key of the pass password store - Ask Ubuntu</a></li>
-</ul>
 
                     </div>
                 </section>
