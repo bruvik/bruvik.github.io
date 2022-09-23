@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Anders Bruvik</copyright>
-    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://bruvik.me/tags/rpi/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://bruvik.me/tags/rpi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running pihole in a docker-container</title>
       <link>https://bruvik.me/posts/pihole-in-a-docker-container-ipv6/</link>
@@ -20,8 +16,9 @@
       <guid>https://bruvik.me/posts/pihole-in-a-docker-container-ipv6/</guid>
       <description>Getting ipv6 to work with rpi, docker and pihole This is how I made pihole run in a docker container with ipv6 support.
 Step one: Configure docker for ipv›6:
-1 2 3 4 5  $ cat /etc/docker/daemon.json { &amp;#34;ipv6&amp;#34;: true, &amp;#34;fixed-cidr-v6&amp;#34;: &amp;lt;your-ipvc-cidr&amp;gt; }   then we need to create a ipv6 network for docker:
-1  docker network create --ipv6 --driver bridge --subnet &amp;#34;fd01::/64&amp;#34; ipv6   restart docker</description>
+1 2 3 4 5 $ cat /etc/docker/daemon.json { &amp;#34;ipv6&amp;#34;: true, &amp;#34;fixed-cidr-v6&amp;#34;: &amp;lt;your-ipvc-cidr&amp;gt; } then we need to create a ipv6 network for docker:
+1 docker network create --ipv6 --driver bridge --subnet &amp;#34;fd01::/64&amp;#34; ipv6 restart docker
+1 systemctl restart docker I use docker-compose to manage the container, so I added the following to docker-compose.</description>
     </item>
     
   </channel>

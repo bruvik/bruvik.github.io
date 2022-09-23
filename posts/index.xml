@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Anders Bruvik</copyright>
-    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://bruvik.me/posts/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruvik.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Managing dotifles in git</title>
+      <link>https://bruvik.me/posts/managing-dotfiles/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://bruvik.me/posts/managing-dotfiles/</guid>
+      <description>How to manage dotfiles in a bare git-repo
+How to set up:
+Initialize an empty git repo in a folder in $HOME:
+1 git init --bare $HOME/.cfg Now we want to set up an alias for git to work on this repo:
+1 alias config=&amp;#39;/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME&amp;#39; We want to hide untraced files, so we explicitly choose which files to track:
+1 config config --local status.showUntrackedFiles no Make config persistent, I use zsh, so I add the alias to .</description>
+    </item>
     
     <item>
       <title>Running pihole in a docker-container</title>
@@ -20,8 +30,9 @@
       <guid>https://bruvik.me/posts/pihole-in-a-docker-container-ipv6/</guid>
       <description>Getting ipv6 to work with rpi, docker and pihole This is how I made pihole run in a docker container with ipv6 support.
 Step one: Configure docker for ipv›6:
-1 2 3 4 5  $ cat /etc/docker/daemon.json { &amp;#34;ipv6&amp;#34;: true, &amp;#34;fixed-cidr-v6&amp;#34;: &amp;lt;your-ipvc-cidr&amp;gt; }   then we need to create a ipv6 network for docker:
-1  docker network create --ipv6 --driver bridge --subnet &amp;#34;fd01::/64&amp;#34; ipv6   restart docker</description>
+1 2 3 4 5 $ cat /etc/docker/daemon.json { &amp;#34;ipv6&amp;#34;: true, &amp;#34;fixed-cidr-v6&amp;#34;: &amp;lt;your-ipvc-cidr&amp;gt; } then we need to create a ipv6 network for docker:
+1 docker network create --ipv6 --driver bridge --subnet &amp;#34;fd01::/64&amp;#34; ipv6 restart docker
+1 systemctl restart docker I use docker-compose to manage the container, so I added the following to docker-compose.</description>
     </item>
     
     <item>

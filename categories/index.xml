@@ -6,10 +6,6 @@
     <description>Recent content in Categories on Bruvik&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Anders Bruvik</copyright>
-    
-	<atom:link href="https://bruvik.me/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>Anders Bruvik</copyright><atom:link href="https://bruvik.me/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

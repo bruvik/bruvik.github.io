@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tools on Bruvik&#39;s blog</title>
-    <link>https://bruvik.me/tags/tools/</link>
-    <description>Recent content in tools on Bruvik&#39;s blog</description>
+    <title>dotfiles on Bruvik&#39;s blog</title>
+    <link>https://bruvik.me/tags/dotfiles/</link>
+    <description>Recent content in dotfiles on Bruvik&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Anders Bruvik</copyright>
-    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruvik.me/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bruvik.me/tags/dotfiles/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Managing dotifles in git</title>
       <link>https://bruvik.me/posts/managing-dotfiles/</link>
@@ -20,15 +20,6 @@ Initialize an empty git repo in a folder in $HOME:
 1 git init --bare $HOME/.cfg Now we want to set up an alias for git to work on this repo:
 1 alias config=&amp;#39;/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME&amp;#39; We want to hide untraced files, so we explicitly choose which files to track:
 1 config config --local status.showUntrackedFiles no Make config persistent, I use zsh, so I add the alias to .</description>
-    </item>
-    
-    <item>
-      <title>Some useful GPG commands</title>
-      <link>https://bruvik.me/posts/useful-gpg-commands/</link>
-      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://bruvik.me/posts/useful-gpg-commands/</guid>
-      <description>Some useful gpg commands I recently ran into a problem with some gpg encrypted file, where the files were encrypted with another key than they were supposed to. Therefore I had to reencrypt them with another key. Every time I run into an unusual task with OpenGPG I find myself banging my head into a wall of useless documentation. Here’s some of the useful commands I found which let me resolve the issue:</description>
     </item>
     
   </channel>

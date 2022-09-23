@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Anders Bruvik</copyright>
-    <lastBuildDate>Wed, 12 Feb 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://bruvik.me/tags/slides/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 12 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://bruvik.me/tags/slides/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CS3 conference 2020</title>
       <link>https://bruvik.me/posts/cs3-conference-2020/</link>
