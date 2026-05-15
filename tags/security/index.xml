@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on Bruvik's blog</title><link>https://bruvik.me/tags/security/</link><description>Recent content in Security on Bruvik's blog</description><generator>Hugo</generator><language>en</language><copyright>Anders Bruvik</copyright><lastBuildDate>Mon, 11 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://bruvik.me/tags/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Using YubiKey with age as encryption backend for gopass</title><link>https://bruvik.me/posts/yubikey-age-gopass/</link><pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate><guid>https://bruvik.me/posts/yubikey-age-gopass/</guid><description>&lt;h1 id="setting-up-gopass-with-a-yubikey-on-macos"&gt;Setting up gopass with a YubiKey on macOS&lt;/h1&gt;
+&lt;p&gt;I have set up &lt;code&gt;gopass&lt;/code&gt; as a work password store, backed by &lt;code&gt;age&lt;/code&gt; encryption with a YubiKey holding the private key, and a git remote for sync. This is my notes about how I set the whole thing up&lt;/p&gt;
+&lt;h2 id="the-goal"&gt;The goal&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Password store managed by &lt;code&gt;gopass&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Secrets encrypted with &lt;code&gt;age&lt;/code&gt;, private key on a YubiKey (via &lt;code&gt;age-plugin-yubikey&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Store committed to git, synced to a remote repo&lt;/li&gt;
+&lt;li&gt;PIN + touch required to decrypt, nothing else&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="architecture-briefly"&gt;Architecture, briefly&lt;/h2&gt;
+&lt;p&gt;There are two layers of encryption in this stack, and conflating them is the source of every confusion in this thread:&lt;/p&gt;</description></item></channel></rss>
